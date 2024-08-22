@@ -4,7 +4,7 @@ import Header from '../../component/Header'
 const Trilhas = () => {
   return (
     <div>
-        <Header />
+       <Header/>
     </div>
   );
 }
