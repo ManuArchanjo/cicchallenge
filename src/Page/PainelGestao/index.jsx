@@ -1,8 +1,9 @@
+
 import React from 'react';
 import Header from '../../component/Header'
 import "./style.css";
 
-const PainelGestao = () => (
+const Trilhas = () => (
     <div>
         <Header/>
     </div>
@@ -10,4 +11,4 @@ const PainelGestao = () => (
 
 );
 
-export default PainelGestao;
+export default Trilhas;
