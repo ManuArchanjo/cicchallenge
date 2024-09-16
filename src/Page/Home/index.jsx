@@ -1,8 +1,11 @@
 import React from 'react';
 import Header from '../../component/Header'
 import Card from '../../component/Card'
-import capaVideo from '../../Imagens/capa-video.png'; // Importe a imagem
+import capaVideo from '../../Imagens/capa-video.png';
 import capaHome from '../../Imagens/capa-home.png'; 
+import arrowIcon from '../../Imagens/arrowIcon.png';
+import cupIconIncomplete from '../../Imagens/copo.png';
+import cupIconComplete from '../../Imagens/copo2.png';
 
 const Home = () => {
   return (
@@ -19,18 +22,33 @@ const Home = () => {
         <div className="cards-container">
           <Card
             image={capaVideo}
-            title="Diferença entre Risco de Compliance e Risco Operacional"
+            title="Loren"
             description="Lorem ipsum dolor sit amet."
+            progress={0}
+            total={1}
+            cupIconIncomplete={cupIconIncomplete}
+            cupIconComplete={cupIconComplete}
+            arrowIcon={arrowIcon}
           />
           <Card
             image={capaVideo}
-            title="Dicas de Compliance com Controles Internos"
+            title="Loren"
             description="Lorem ipsum dolor sit amet."
+            progress={1}
+            total={6}
+            cupIconIncomplete={cupIconIncomplete}
+            cupIconComplete={cupIconComplete}
+            arrowIcon={arrowIcon}
           />
           <Card
             image={capaVideo}
-            title="Outro Curso"
+            title="Loren"
             description="Lorem ipsum dolor sit amet."
+            progress={2}
+            total={3}
+            cupIconIncomplete={cupIconIncomplete}
+            cupIconComplete={cupIconComplete}
+            arrowIcon={arrowIcon}
           />
         </div>
       </section>
