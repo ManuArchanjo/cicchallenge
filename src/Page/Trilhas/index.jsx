@@ -1,34 +1,17 @@
 import React from 'react';
 import Header from '../../component/Header';
-import '../Trilhas/style.css';  
-import Cards from '../../component/Cards'
+import Hero from '../../component/Hero';
+import CardsSection from '../../component/Cards';
+import FooterTrilhas from '../../component/FooterTrilhas.jsx';
+import './style.css';
 
 const Trilhas = () => (
   <div>
-      <Header />
-      <section className="hero-section">
-          <div className="hero-content">
-              <h1>Trilhe seu desenvolvimento</h1>
-              <p>Desenvolvimento contínuo, resultados extraordinários</p>
-          </div>
-      </section>
-      
-          <div className="cards-container">
-              <Cards />
-              <Cards />
-              <Cards />
-          </div>
+    <Header />
+    <Hero />
+    <CardsSection />
+    <FooterTrilhas />
   </div>
 );
 
-
-
 export default Trilhas;
-
-
-
-
-
-
-
-
