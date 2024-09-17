@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../../component/Header';
 import Card from '../../component/Card';
+import Footer from '../../component/Footer'
 import capaVideo from '../../Imagens/capa-video.png';
 import capaHome from '../../Imagens/capa-home.png'; 
 import fundoHome from '../../Imagens/fundo-home.png';
 import perfil from '../../Imagens/perfil.jpeg';
+import perfil1 from '../../Imagens/perfil1.jpg';
 import likeIcon from '../../Imagens/like.png';
 import commentIcon from '../../Imagens/reply.png';
 import moreIcon from '../../Imagens/more.png';
@@ -94,40 +96,32 @@ const Home = () => {
                   <span>Comentar</span>
                 </div>
               </div>
-              {/* <div className="forum-reply">
-                <input type="text" placeholder="Adicione sua resposta" />
-              </div>
-              <div className="forum-comment">
-                <img src={perfil} alt="Avatar" className="forum-avatar" />
-                <div className="forum-comment-content">
-                  <span>Alessandro Ribeiro</span>
-                  <p>Olá Carla! Indico esse vídeo aqui, ele é curto e prático: PerdComps pendentes.</p>
+
+              <div className='comments'>
+                <div className="forum-reply">
+                  <input type="text" />
                 </div>
-              </div>
-              <div className="forum-reply-actions">
-                <span>Gostei</span>
-                <span>Comentar</span>
-                <span>2 comentários</span>
-              </div> */}
-              {/* <div className="forum-comment">
-                <img src={perfil} alt="Avatar" className="forum-avatar" />
-                <div className="forum-comment-content">
-                  <span>Carla A.</span>
-                  <p>Oi Alessandro! Acabei de achar o vídeo que me sugeriu. Muito obrigada!</p>
+                <div className="forum-comment">
+                  <img src={perfil1} alt="Avatar" className="forum-avatar" />
+                  <div className="forum-post-info">
+                    <span>Alessandro Ribeiro</span>
+                    <p className='margin-0'>Assistente Tributário</p>
+                    <p className='sub-title'>1 m</p>
+                    <p className='secondy-coments'>Olá Carla! Indico esse vídeo aqui, ele é curto e prático: PerdComps pendentes.</p>
+                  </div>
                 </div>
+                <div className="forum-reply-actions">
+                  <span>Gostei</span>
+                  <span>Comentar</span>
+                  <span>2 comentários</span>
+                </div> 
               </div>
-              <div className="forum-reply-actions">
-                <span>Gostei</span>
-                <span>Comentar</span>
-                <span>1 pessoa gostou</span>
-              </div> */}
-              {/* <div className="forum-actions">
-                <img src={moreIcon} alt="Mais ações" className="more-actions-icon" />
-              </div> */}
+               
             </div>
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };

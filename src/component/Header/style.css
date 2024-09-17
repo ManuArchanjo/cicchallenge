@@ -228,11 +228,12 @@
 }
 
 .forum-reply {
-  margin-top: 20px;
+  margin: 20px 22px 40px 22px;
 }
 
 input[type="text"] {
-  width: 100%;
+  width: 97%;
+  height: 60px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -244,6 +245,7 @@ input[type="text"] {
   align-items: flex-start;
   gap: 15px;
   margin-top: 20px;
+  margin-left: 30px;
 }
 
 .forum-comment-content {
@@ -254,16 +256,15 @@ input[type="text"] {
   font-weight: bold;
 }
 
-.forum-comment-content p {
-  margin: 0;
-  color: #8a8a8a;
-}
 
 .forum-reply-actions {
   display: flex;
   gap: 15px;
-  margin-left: 55px;
+  margin-left: 98px;
   margin-top: 10px;
+  padding-bottom: 38px;
+  font-weight: bold;
+  color: #464545;
 }
 
 .forum-link {
@@ -299,4 +300,15 @@ input[type="text"] {
   font-size: 13px;
   font-weight: 800;
   margin-top: -10px;
+}
+
+.comments{
+  padding-top: 17px !important;
+  margin: 30px -21px -21px -21px;
+  background-color: #6666661a;
+}
+
+.secondy-coments{
+  font-size: 16px !important;
+  color: black !important;
 }
