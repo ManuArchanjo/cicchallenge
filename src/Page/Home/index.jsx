@@ -14,7 +14,7 @@ import arrowIcon from '../../Imagens/arrowIcon.png';
 import cupIconIncomplete from '../../Imagens/copo.png';
 import cupIconComplete from '../../Imagens/copo2.png';
 
-const Home = () => {
+const Trilhas = () => {
   return (
     <div>
       <Header />
@@ -126,4 +126,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Trilhas;

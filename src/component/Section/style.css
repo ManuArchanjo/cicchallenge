@@ -1,0 +1,16 @@
+.sectionTitle {
+    padding: 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    color: #666;
+  }
+  
