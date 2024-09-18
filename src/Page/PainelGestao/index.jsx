@@ -7,8 +7,6 @@ const Trilhas = () => (
     <div>
         <Header/>
     </div>
-  
-
 );
 
 export default Trilhas;

@@ -27,6 +27,7 @@ const Trilhas = () => {
       <section className="section-content">
         <h2>Retorne de onde parou:</h2>
         <div className="cards-container">
+          {/* arrumar trofeu amarelo */}
           <Card
             image={capaVideo}
             title="Loren"
