@@ -1,12 +1,11 @@
-/* Container geral exclusivo da nova tela Fundamentos */
+
 .fundamentos-container {
     display: flex;
     padding: 20px;
-    max-width: 100%; /* Ocupa a tela toda */
+    max-width: 100%;
     margin: 36px 0 74px 75px;
 }
 
-/* Cartão à esquerda exclusivo da tela Fundamentos */
 .fundamentos-left-card {
     width: 280px;
     height: auto;
@@ -37,7 +36,6 @@
     padding: 0 20px;
 }
 
-/* Estilos para o cabeçalho exclusivo da página */
 .fundamentos-modules-header {
     display: flex;
     justify-content: space-between;
@@ -72,7 +70,6 @@
     font-weight: 700;
 }
 
-/* Barra de progresso */
 .fundamentos-progress-bar-container {
     width: 80px;
     height: 8px;
@@ -89,7 +86,6 @@
     border-radius: 4px;
 }
 
-/* Lista de módulos exclusiva */
 .fundamentos-modules-list {
     display: flex;
     flex-direction: column;
@@ -112,7 +108,6 @@
     margin-top: 10px;
 }
 
-/* Linha separadora entre módulos */
 .fundamentos-module-item::after {
     content: "";
     position: absolute;
@@ -166,3 +161,76 @@
     background-color: #e0e0e0;
     margin: 0 0 20px -10px;
   }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  
+
+  .modal-content {
+    background-color: #fff;
+    padding: 24px;
+    width: 50%;
+    max-width: 900px;
+    border-radius: 8px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+   
+  }
+  
+  .comments-section {
+    margin-top: 20px;
+  }
+  
+  .comment {
+    margin-bottom: 10px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
