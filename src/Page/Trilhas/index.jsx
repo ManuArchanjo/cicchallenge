@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import capaTrilha from '../../Imagens/Capa-trilha.png'; 
 import capaCard1 from '../../Imagens/capa-trilha1.png'; 
 import capaCard2 from '../../Imagens/financeiro.png';
@@ -36,11 +37,13 @@ const Trilhas = () => (
             <div className="cards-container-trilha">
                 {[1, 2, 3].map((item) => (
                     <div key={item} className="card-trilhas">
-                        <img src={capaCard2} alt="Capa da trilha" className="card-image" />
-                        <div className="card-content">
-                            <h3>Setor Tributário</h3>
-                            <p>Descubra como minimizar sua carga tributária pessoal e empresarial. Estratégias eficazes para otimizar sua situação fiscal.</p>
-                        </div>
+                        <Link to="/financeiro">
+                            <img src={capaCard2} alt="Capa da trilha" className="card-image" />
+                            <div className="card-content">
+                                <h3>Setor Tributário</h3>
+                                <p>Descubra como minimizar sua carga tributária pessoal e empresarial. Estratégias eficazes para otimizar sua situação fiscal.</p>
+                            </div>
+                        </Link>
                     </div>
                 ))}
             </div>
