@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css'; 
+import { Link } from 'react-router-dom';
 import Header from '../../component/Header';
 import Footer from '../../component/Footer';
 import capaCard2 from '../../Imagens/financeiro.png';
@@ -47,7 +48,7 @@ const FinanceiroPage = () => {
                     </div>
                 </div>
                 <div className="modules-container">
-                    <div className="module-card">
+                    <Link to="/fundamentos" className="module-card">
                         <img src={iconeFundamento} alt="Fundamentos do Sistema Tributário" className="module-icon" />
                         <div className="module-content">
                             <p className="module-title">Módulo</p>
@@ -58,7 +59,7 @@ const FinanceiroPage = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
                     <div className="module-card">
                         <img src={iconeContabilidade} alt="Contabilidade Tributária" className="module-icon" />

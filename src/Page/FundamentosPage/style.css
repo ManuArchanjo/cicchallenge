@@ -1,0 +1,168 @@
+/* Container geral exclusivo da nova tela Fundamentos */
+.fundamentos-container {
+    display: flex;
+    padding: 20px;
+    max-width: 100%; /* Ocupa a tela toda */
+    margin: 36px 0 74px 75px;
+}
+
+/* Cartão à esquerda exclusivo da tela Fundamentos */
+.fundamentos-left-card {
+    width: 280px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-right: 78px;
+}
+
+.fundamentos-left-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 6px 6px 0 0;
+}
+
+.fundamentos-left-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
+.fundamentos-left-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+/* Estilos para o cabeçalho exclusivo da página */
+.fundamentos-modules-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8f0ff;
+    padding: 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    width: 92%;
+}
+
+.fundamentos-header-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.fundamentos-points-container,
+.fundamentos-status-container,
+.fundamentos-filter-container,
+.fundamentos-progress-container {
+    display: flex;
+    align-items: center;
+}
+
+.fundamentos-points-container span,
+.fundamentos-status-container span,
+.fundamentos-filter-container span,
+.fundamentos-progress-container span {
+    font-size: 16px;
+    color: #0350C4;
+    font-weight: 700;
+}
+
+/* Barra de progresso */
+.fundamentos-progress-bar-container {
+    width: 80px;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.fundamentos-progress-bar {
+    width: 30%;
+    height: 100%;
+    background-color: #0350C4;
+    border-radius: 4px;
+}
+
+/* Lista de módulos exclusiva */
+.fundamentos-modules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+}
+
+.fundamentos-module-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.fundamentos-module-item + .fundamentos-module-item {
+    margin-top: 10px;
+}
+
+/* Linha separadora entre módulos */
+.fundamentos-module-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.fundamentos-module-item:last-child::after {
+    display: none;
+}
+
+.fundamentos-module-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0350C4;
+}
+
+.fundamentos-module-duration {
+    font-size: 14px;
+    color: #999;
+    margin-top: -14px
+}
+
+.fundamentos-status-icon {
+    width: 32px;
+    height: 32px;
+    margin-top: 20px;
+}
+
+.width-100{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card-tributo{
+    width: 97%;
+}
+
+.tribu{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 52px;
+}
+
+.line-divider {
+    width: 217%;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0 0 20px -10px;
+  }
