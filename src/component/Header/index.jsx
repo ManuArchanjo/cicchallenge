@@ -13,11 +13,12 @@ const Header = () => (
       </div>
       <div className="header_separator"></div>
       <ul className="header_nav">
-        <li>Home</li>
+        <li>
+          <Link to="/" className="header_link">Home</Link></li>
         <li>Painel Gestão</li>
         <li>Oportunidades</li>
         <li>
-          <Link to="/trilhas">Cursos</Link> 
+          <Link to="/trilhas" className="header_link">Cursos</Link> 
         </li>
       </ul>
     </div>

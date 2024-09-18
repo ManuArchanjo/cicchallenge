@@ -10,16 +10,14 @@ const Card = ({ image, title, description, progress, total, cupIconIncomplete, c
     <div className="card">
       <img src={image} alt={title} />
       <p>{title}</p>
-      <div className="progress-container">
+      <div className="progress-container-home">
         <ProgressBar
           now={(progress / total) * 100}
-          variant={progress === total ? 'complete' : 'incomplete'}
-          className={`progress-bar-${progress === total ? 'complete' : 'incomplete'}`}
+          className={`progress-bar-home ${progress === total ? 'progress-bar-home-complete' : 'progress-bar-home-incomplete'}`}
         />
         <img src={cupIcon} alt="Copo" className="cup-icon" />
         <div className="progress-info">
           <span>{`${progress} / ${total} concluído`}</span>
-          
         </div>
       </div>
       <div className="see-more">

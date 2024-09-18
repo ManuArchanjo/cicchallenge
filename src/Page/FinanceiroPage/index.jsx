@@ -48,7 +48,7 @@ const FinanceiroPage = () => {
                     </div>
                 </div>
                 <div className="modules-container">
-                    <Link to="/fundamentos" className="module-card">
+                    <Link to="/fundamentos" className=" header_link module-card">
                         <img src={iconeFundamento} alt="Fundamentos do Sistema Tributário" className="module-icon" />
                         <div className="module-content">
                             <p className="module-title">Módulo</p>

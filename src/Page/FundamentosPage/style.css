@@ -162,7 +162,7 @@
     margin: 0 0 20px -10px;
   }
 
-.modal-overlay {
+  .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -175,8 +175,6 @@
     z-index: 1000;
   }
   
-  
-
   .modal-content {
     background-color: #fff;
     padding: 24px;
@@ -186,38 +184,77 @@
     position: relative;
     max-height: 80vh;
     overflow-y: auto;
-    margin-top: 70px;
-    margin-bottom: 70px;
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
+  }
   
-  .close-modal {
-    position: absolute;
-    top: 10px;
-    right: 20px;
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .modal-header a {
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .modal-header a:hover {
+    text-decoration: underline;
+  }
+  
+  .modal-header span {
+    color: #666;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  
+  .modal-close {
     background-color: transparent;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
+    color: #000;
+  }
+  
+  .modal-video-info {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+    margin: 15px 0;
+  }
+  
+  .modal-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .modal-description {
+    font-size: 14px;
+    line-height: 1.6;
     color: #666;
-   
+    margin-bottom: 120px;
+  }
+  
+  .stats-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .stats-section div {
+    display: flex;
+    align-items: center;
   }
   
   .comments-section {
-    margin-top: 20px;
+    margin-top: 0;
   }
   
   .comment {
@@ -226,11 +263,35 @@
     padding-top: 10px;
   }
   
+  .comment p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
   input[type="text"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .toggle-text-button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    padding: 0;
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+    width: 120px;
+    height: 30px;
+    margin-left: -26px;
+    margin-top: -4px;
+
   }
   

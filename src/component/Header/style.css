@@ -316,3 +316,13 @@ input[type="text"] {
   font-size: 16px !important;
   color: black !important;
 }
+
+.header_link {
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit; /* Inherit irá garantir que a cor do texto seja a mesma dos outros itens */
+}
+
+.header_link:hover {
+  text-decoration: none; /* Garante que ao passar o mouse não apareça o sublinhado */
+  color: inherit; /* Mantém a mesma cor ao passar o mouse */
+}

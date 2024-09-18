@@ -30,11 +30,11 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
+/* button:hover {
   background-color: #0056b3;
-}
+} */
 
-.progress-container {
+.progress-container-home {
   /* margin-top: 14px; */
   width: 225px;
 }
@@ -60,18 +60,18 @@ button:hover {
   margin: -15px 0 0 236px;
 }
 
-.progress-bar {
+.progress-bar-home {
   background-color: #004C9E;
   height: 5px;
   border-radius: 3px;
 }
 
-.progress-bar-incomplete {
+.progress-bar-home-incomplete {
   background-color: #BDBDBD;
   margin-bottom: -16px;
 }
 
-.progress-bar-complete {
+.progress-bar-home-complete {
   background-color: #004C9E;
 }
 

@@ -37,7 +37,7 @@ const Trilhas = () => (
             <div className="cards-container-trilha">
                 {[1, 2, 3].map((item) => (
                     <div key={item} className="card-trilhas">
-                        <Link to="/financeiro">
+                        <Link to="/financeiro" className='header_link'>
                             <img src={capaCard2} alt="Capa da trilha" className="card-image" />
                             <div className="card-content">
                                 <h3>Setor Tributário</h3>
