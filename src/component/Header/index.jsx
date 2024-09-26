@@ -1,33 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../../Imagens/Logo.png';
-import perfil from '../../Imagens/perfil.jpeg';
+import React, { useState } from 'react';
 import './style.css';
+import teste from "../../Imagens/Logo.png"
+import { FaUser, FaBook, FaCheckCircle, FaCalendarAlt, FaTrophy, FaComments } from 'react-icons/fa';
 
-const Header = () => (
-  <div className="header">
-    <div className="header_menu">
-      <div className="header_logo">
-        <img src={Logo} alt="CIC+" />
-        <p className="header_logo-text">cic +</p>
-      </div>
-      <div className="header_separator"></div>
-      <ul className="header_nav">
-        <li>
-          <Link to="/" className="header_link">Home</Link></li>
-        <li>Painel Gestão</li>
-        <li>Oportunidades</li>
-        <li>
-          <Link to="/trilhas" className="header_link">Cursos</Link> 
-        </li>
-      </ul>
-    </div>
-    <div>
-      <div className="header_profile">
-        <img src={perfil} alt="Profile" />
-      </div>
-    </div>
-  </div>
-);
+const Sidebar = () => {
+  const [selected, setSelected] = useState("Perfil");
 
-export default Header;
+  const menuItems = [
+    { name: "Perfil", icon: <FaUser /> },
+    { name: "Meus Cursos", icon: <FaBook /> },
+    { name: "Conquistas", icon: <FaTrophy /> },
+    { name: "Eventos", icon: <FaCalendarAlt /> },
+    { name: "Agenda", icon: <FaCalendarAlt /> },
+    { name: "Mensagens", icon: <FaComments /> },
+  ];
+
+  return (
+    <diiv>
+      <div className="sidebar_logo">
+        <img src={teste} alt="CIC+" className="logo" /> 
+        <h1>CIC +</h1>
+      </div>
+      <div className='azul'>
+      <div className="container" id="cont">
+      {menuItems.map((item) => (
+        <div
+          key={item.name}
+          className={`containerblue ${selected === item.name ? "active" : ""}`}
+          onClick={() => setSelected(item.name)}
+        >
+          <div className="btn top"></div>
+          <div className="btn middle">
+            {item.icon} <span>{item.name}</span>
+          </div>
+          <div className="btn bottom"></div>
+        </div>
+      ))}
+    </div>
+
+    </div>
+    </diiv>  
+  );
+};
+
+export default Sidebar;

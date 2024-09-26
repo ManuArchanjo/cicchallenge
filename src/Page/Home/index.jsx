@@ -30,7 +30,7 @@ const Home = () => {
           {/* arrumar trofeu amarelo */}
           <Card
             image={capaVideo}
-            title="Loren"
+            title="Risco operacional"
             description="Lorem ipsum dolor sit amet."
             progress={0}
             total={1}
@@ -40,7 +40,7 @@ const Home = () => {
           />
           <Card
             image={capaVideo}
-            title="Loren"
+            title="Receita"
             description="Lorem ipsum dolor sit amet."
             progress={1}
             total={6}
@@ -50,7 +50,7 @@ const Home = () => {
           />
           <Card
             image={capaVideo}
-            title="Loren"
+            title="Abertura de perdcomp"
             description="Lorem ipsum dolor sit amet."
             progress={2}
             total={3}

@@ -5,6 +5,7 @@ import PainelGestao from '../PainelGestao';
 import Trilhas from "../Trilhas";
 import FinanceiroPage from "../FinanceiroPage";
 import FundamentosPage from "../FundamentosPage";
+import Inicial from "../Inicial";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/trilhas" element={<Trilhas />} />
         <Route path="/financeiro" element={<FinanceiroPage />} />
         <Route path="/fundamentos" element={<FundamentosPage />} />
+        <Route path="/inicial" element={<Inicial />} />
       </Routes>
     </Router>
   );

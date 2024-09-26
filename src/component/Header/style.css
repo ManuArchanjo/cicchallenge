@@ -318,11 +318,114 @@ input[type="text"] {
 }
 
 .header_link {
-  text-decoration: none; /* Remove o sublinhado */
-  color: inherit; /* Inherit irá garantir que a cor do texto seja a mesma dos outros itens */
+  text-decoration: none;
+  color: inherit;
 }
 
 .header_link:hover {
-  text-decoration: none; /* Garante que ao passar o mouse não apareça o sublinhado */
-  color: inherit; /* Mantém a mesma cor ao passar o mouse */
+  text-decoration: none;
+  color: inherit; 
+}
+
+.sidebar_logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 32px 20px 48px 62px;
+  background-color: #6b6deb;
+  width: 184px;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.sidebar_logo h1 {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* NOVOOO lateral*/
+.container {
+  background-color: #eaefff;
+  width: 300px;
+  top: 0;
+  left: 0;
+}
+
+.containerblue {
+  background-color: #6b6deb;
+  width: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding-left: 30px;
+  
+}
+
+.containerblue.active > .top {
+  background-color: #6b6deb;
+  width: 236px;
+  height: 25px;
+  border-radius: 0px 0px 25px 0px;
+  pointer-events: none;
+  transition: width 0.3s ease;
+}
+
+.containerblue.active > .middle {
+  background-color: #eaefff;
+  width: 226px;
+  border-radius: 25px;
+  padding: 9px 10px 10px 30px;
+  color: #6b6deb;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.containerblue.active > .bottom {
+  background-color: #6b6deb;
+  width: 236px;
+  height: 25px;
+  border-radius: 0px 25px 0px 0px;
+  pointer-events: none;
+  transition: width 0.3s ease;
+}
+
+.top {
+  background-color: #6b6deb;
+  width: 236px;
+  pointer-events: none;
+}
+
+.middle {
+  background-color: #6b6deb;
+  width: 196px;
+  padding: 9px 10px 10px 30px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bottom {
+  background-color: #6b6deb;
+  width: 236px;
+  height: 25px;
+  pointer-events: none;
+}
+
+.middle span {
+  margin-left: 10px;
+}
+
+.azul{
+  width: 266px;
+  height: 100vh;
+  background-color: #6b6deb;
+  
 }
