@@ -1,0 +1,100 @@
+.painel-gestao-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .management-panel {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .management-header h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .management-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    /* padding: 10px 20px; */
+    border: none;
+    /* border-radius: 4px; */
+    cursor: pointer;
+  }
+  
+  .btn.primary {
+    background-color: #6b6deb;
+    color: white;
+  }
+  
+  .btn.secondary {
+    background-color: #eaefff;
+    color: #6b6deb;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .members-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .members-table th, .members-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .members-table th {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .members-table td img {
+    border-radius: 50%;
+  }
+  
+  .members-table td .btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .members-table td .btn-icon svg {
+    font-size: 20px; /* Define o tamanho dos ícones */
+    color: #6b6deb;
+  }
+  
+  .members-table .status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .members-table .status.active {
+    background-color: #d4f5d3;
+    color: #2a8e2a;
+  }
+  
+  .members-table .status.inactive {
+    background-color: #f5d3d3;
+    color: #e83a3a;
+  }
+  
