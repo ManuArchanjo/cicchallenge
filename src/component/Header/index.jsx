@@ -16,7 +16,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <diiv>
+    <div>
       <div className="sidebar_logo">
         <img src={teste} alt="CIC+" className="logo" /> 
         <h1>CIC +</h1>
@@ -39,7 +39,7 @@ const Sidebar = () => {
     </div>
 
     </div>
-    </diiv>  
+    </div>  
   );
 };
 

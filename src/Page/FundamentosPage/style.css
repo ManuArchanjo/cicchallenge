@@ -269,15 +269,7 @@
     color: #333;
   }
   
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 10px;
-    font-family: 'Arial', sans-serif;
-  }
-  
+
   .toggle-text-button{
     display: inline-flex;
     align-items: center;
