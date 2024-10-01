@@ -1,11 +1,8 @@
 .card {
-  width: 259px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
   text-align: left;
   margin: 10px;
-  border-radius: 8px;
-  padding: 35px 20px;
+ 
 }
 
 .card img {
@@ -14,7 +11,7 @@
 }
 
 .card p {
-  margin-top: 27px;
+  margin-top: 2px;
   font-size: 14px;
   font-weight: bold;
   color: #333;

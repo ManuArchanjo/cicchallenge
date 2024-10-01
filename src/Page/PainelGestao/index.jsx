@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../component/Header';
 import './style.css';
-import { FaEdit, FaTrashAlt, FaSearch } from 'react-icons/fa';  // Adiciona o ícone de lupa
+import { FaEdit, FaTrashAlt, FaSearch } from 'react-icons/fa';
 
 const employees = [
   {
@@ -71,13 +71,11 @@ const PainelGestao = () => {
           </div>
         </div>
 
-        {/* Botões fora do card */}
         <div className="management-actions">
           <button className="btn primary">Adicionar novo</button>
           <button className="btn secondary">Exportar dados (Excel)</button>
         </div>
 
-        {/* Card container */}
         <div className="card-container">
           <div className="management-header">
             <h1>Membros</h1>

@@ -4,15 +4,12 @@ import teste from "../../Imagens/Logo.png"
 import { FaUser, FaBook, FaCheckCircle, FaCalendarAlt, FaTrophy, FaComments } from 'react-icons/fa';
 
 const Sidebar = () => {
-  const [selected, setSelected] = useState("Perfil");
+  const [selected, setSelected] = useState("");
 
   const menuItems = [
-    { name: "Perfil", icon: <FaUser /> },
-    { name: "Meus Cursos", icon: <FaBook /> },
-    { name: "Conquistas", icon: <FaTrophy /> },
-    { name: "Eventos", icon: <FaCalendarAlt /> },
-    { name: "Agenda", icon: <FaCalendarAlt /> },
-    { name: "Mensagens", icon: <FaComments /> },
+    { name: "Fundamentos", icon: <FaUser /> },
+    { name: "Oportunidades", icon: <FaBook /> },
+    { name: "Cursos", icon: <FaTrophy /> },
   ];
 
   return (

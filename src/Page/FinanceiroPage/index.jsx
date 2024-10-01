@@ -12,21 +12,39 @@ import botoes from '../../Imagens/Botões.png';
 import iconeTrofeu from '../../Imagens/trofeu.png';
 import iconeAvancado from '../../Imagens/avancado.png';
 import iconeFinanceiro from '../../Imagens/financeirotopo.png';
+import { FaSearch } from 'react-icons/fa';
 
 const FinanceiroPage = () => {
   return (
     <div>
+        <div className="painel-gestao-container">
         <Header />
-        <div className="financeiro-page-container">
-            <div className="left-card">
-                <img src={capaCard2} alt="Planejamento Tributário" className="left-card-image" />
-                <h3>Planejamento Tributário</h3>
-                <p>
-                Explore estratégias inteligentes para minimizar impostos e melhorar seu planejamento
-                financeiro. Novas ideias e ferramentas para reduzir sua carga tributária pessoal e empresarial.
-                </p>
+        
+        
+            
+             <div className="management-panel">
+        <div className="search">
+          <div className="search-bar">
+            <FaSearch className="search-icon" />
+            <input type="text" placeholder="Pesquise..." className="search-input" />
+          </div>
+          <div className="profile-info">
+            <img 
+              src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?crop=faces&fit=crop&h=40&w=40" 
+              alt="Profile" 
+              className="profile-picture" 
+            />
+            <div className="profile-text">
+              <p className="profile-name">Karen Loren</p>
+              <p className="profile-position">Analista jurídico</p>
             </div>
-            <div className="right-modules">
+          </div>
+
+
+
+
+        </div>
+        <div className="right-modules">
                 <div className="modules-header">
                     <div className="points-container">
                         <img src={iconeTrofeu} alt="Troféu" className="header-icon" />
@@ -101,6 +119,7 @@ const FinanceiroPage = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <Footer/>
     </div>
