@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "./pages/fixo/Topbar";
 import Sidebar from "./pages/fixo/Sidebar";
 import Dashboard from "./pages/dashboard";
+import Oportunidades from "./pages/oportunidades";
 import Painel from "./pages/painel";
 import Trilhas from "./pages/trilhas";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -25,7 +26,8 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/painel" element={<Painel />} />
               <Route path="/trilhas" element={<Trilhas />} />
-              <Route path="/video" element={<VideoExample />} /> {/* Corrigido */}
+              <Route path="/video" element={<VideoExample />} /> 
+              <Route path="/oportunidades" element={<Oportunidades />} />
             </Routes>
           </main>
         </div>

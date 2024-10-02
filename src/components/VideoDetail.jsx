@@ -14,9 +14,7 @@ import {
 } from '@mui/material';
 
 const VideoExample = () => {
-  const [comments, setComments] = useState([
-    { name: 'João Silva', text: 'Esse conteúdo é excelente!' },
-  ]);
+  const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
   const handleAddComment = () => {
@@ -31,23 +29,29 @@ const VideoExample = () => {
       title: 'Conteúdo 1 - Vídeo (30s)',
       progress: 75,
       duration: '30s',
+      points: 10,
     },
     {
       title: 'Conteúdo 2 - Vídeo (45s)',
       progress: 0,
       duration: '45s',
+      points: 15,
     },
     {
       title: 'Conteúdo 3 - Vídeo (60s)',
       progress: 0,
       duration: '60s',
+      points: 20,
     },
     {
       title: 'Avaliação do curso - Questionário',
       progress: 0,
       duration: '15min',
+      points: 30,
     },
   ];
+
+  const totalPoints = modules.reduce((total, module) => total + module.points, 0);
 
   return (
     <Box display="flex" flexDirection="row" height="100vh" p={4} bgcolor="#f4f7fb">
@@ -121,6 +125,9 @@ const VideoExample = () => {
               </Typography>
               <Typography variant="body2" color="textSecondary">
                 Duração: {module.duration}
+              </Typography>
+              <Typography variant="body2" color="#0D47A1">
+                Pontuação: {module.points} pontos
               </Typography>
               <Box mt={1}>
                 <LinearProgress variant="determinate" value={module.progress} sx={{ height: '10px', borderRadius: '5px', backgroundColor: '#BBDEFB' }} />

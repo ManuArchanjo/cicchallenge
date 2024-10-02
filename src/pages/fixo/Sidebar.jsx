@@ -1,24 +1,21 @@
 import { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
-import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import Logo from "../../imagens/Logo.png"; 
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
   return (
     <MenuItem
       active={selected === title}
       style={{
-        color: colors.grey[100],
+        color: "#333",
       }}
       onClick={() => setSelected(title)}
       icon={icon}
@@ -37,7 +34,7 @@ const Sidebar = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: ` rgb(39 99 247) !important`,
+          background: `#f2f0f0 !important`,
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -46,10 +43,10 @@ const Sidebar = () => {
           padding: "5px 35px 5px 20px !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#fff !important",
+          color: "#000 !important",
         },
-        "& .pro-menu-item": {
-          color: "#ededed !important",
+        "& .pro-menu-item.active": {
+          color: "#000 !important",
         },
       }}
     >
@@ -60,7 +57,7 @@ const Sidebar = () => {
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
-              color: "#fff",
+              color: "#000",
             }}
           >
             {!isCollapsed && (
@@ -70,9 +67,12 @@ const Sidebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={"#fff"}>
-                  CIC+
-                </Typography>
+                <Box display="flex" alignItems="center">
+                  <img src={Logo} alt="logo" style={{ marginLeft: '20px' }} />
+                  <Typography variant="h3" color={"#000"} fontWeight="bold">
+                    
+                  </Typography>
+                </Box>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -82,30 +82,9 @@ const Sidebar = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-              title="Dashboard"
+              title="Home"
               to="/"
               icon={<HomeOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-
-            <Typography
-              variant="h6"
-              color={"#fff"}
-              sx={{ m: "15px 0 5px 20px" }}
-            >
-            </Typography>
-            {/* <Item
-              title="Perfil"
-              to="/painel"
-              icon={<PeopleOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            /> */}
-            <Item
-              title="Painel de gestão"
-              to="/painel"
-              icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -117,15 +96,15 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Meus Cursos"
-              to="/cursos"
+              title="Painel de gestão"
+              to="/painel"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Oportunidade"
-              to="/oportunidade"
+              title="Oportunidades"
+              to="/oportunidades"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

@@ -31,7 +31,7 @@ const EmployeesTable = () => {
 
   return (
     <Box m="20px">
-      <Box display="flex" justifyContent="space-between" mb={2} sx={{ mb: '40px', mt:"90px" }}>
+      <Box display="flex" justifyContent="space-between" mb={2} sx={{ mb: '40px', mt:"20px" }}>
         <Button variant="contained" sx={{ backgroundColor: '#4a90e2', color: '#fff' }}>
           + adicionar usuário
         </Button>
