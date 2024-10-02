@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Typography, useTheme, Button } from "@mui/material";
 import { tokens } from "../../theme";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
@@ -8,16 +8,26 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
 import StatBox from "../../components/StatBox";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import Divider from "@mui/material/Divider";
+import Divider from '@mui/material/Divider';
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  // Definindo os módulos, que antes eram o fórum
+  const [tourStep, setTourStep] = useState(0);
+
   const [expandedModule, setExpandedModule] = useState(null);
+
+  const startTour = () => {
+    setTourStep(1);
+  };
+
+  const nextStep = () => {
+    setTourStep(tourStep === 1 ? 2 : 0);
+  };
 
   const toggleModule = (moduleId) => {
     if (expandedModule === moduleId) {
@@ -66,34 +76,71 @@ const Dashboard = () => {
     <Box m="20px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="Bem-vindo de volta" />
+        <IconButton onClick={startTour} aria-label="Ajuda">
+          <HelpOutlineIcon sx={{ fontSize: "30px", color: colors.greenAccent[500] }} />
+        </IconButton>
       </Box>
 
-      {/* GRID & CHARTS */}
       <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
         gap="20px"
       >
-        {/* ROW 1 */}
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
+          position="relative"
+          sx={{
+            border: tourStep === 1 ? "1px solid blue" : "none",
+            boxShadow: tourStep === 1 ? "0 0 20px rgba(59, 59, 238, 0.7)" : "none",
+          }}
         >
           <StatBox
             title="15"
             subtitle="Trilhas completadas"
             progress="0.75"
             increase="+10%"
-            icon={
-              <EmailIcon
-                sx={{ color: "#000", fontSize: "26px" }}
-              />
-            }
+            icon={<EmailIcon sx={{ color: "#000", fontSize: "26px" }} />}
           />
+          {tourStep === 1 && (
+            <Box
+              sx={{
+                position: "absolute",
+                top: "100%",
+                left: "40%",
+                transform: "translateX(-50%)",
+                backgroundColor: "#333",
+                color: "#fff",
+                padding: "10px",
+                borderRadius: "5px",
+                width: "200px",
+                textAlign: "center",
+                zIndex: 1,
+                "::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: "100%",
+                  left: "50%",
+                  
+                  transform: "translateX(-50%)",
+                  borderWidth: "10px",
+                  borderStyle: "solid",
+                  borderColor: "transparent transparent #333 transparent",
+                },
+              }}
+            >
+              <Typography variant="body2">
+                
+              </Typography>
+              <Button onClick={nextStep} variant="contained" sx={{ mt: 1 }}>
+                Próximo
+              </Button>
+            </Box>
+          )}
         </Box>
 
         <Box
@@ -102,18 +149,53 @@ const Dashboard = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
+          position="relative"
+          sx={{
+            border: tourStep === 2 ? "1px solid blue" : "none", 
+            boxShadow: tourStep === 2 ? "0 0 20px rgba(0, 0, 255, 0.7)" : "none", 
+          }}
         >
           <StatBox
             title="5,235"
             subtitle="Usuários ativos"
             progress="0.50"
             increase="+8%"
-            icon={
-              <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            icon={<PointOfSaleIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />}
           />
+          {tourStep === 2 && (
+            <Box
+              sx={{
+                position: "absolute",
+                top: "100%",
+                left: "40%",
+                transform: "translateX(-50%)",
+                backgroundColor: "#333",
+                color: "#fff",
+                padding: "10px",
+                borderRadius: "5px",
+                width: "200px",
+                textAlign: "center",
+                zIndex: 1,
+                "::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: "100%",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  borderWidth: "10px",
+                  borderStyle: "solid",
+                  borderColor: "transparent transparent #333 transparent",
+                },
+              }}
+            >
+              <Typography variant="body2">
+                Aqui você vê os usuários ativos.
+              </Typography>
+              <Button onClick={() => setTourStep(0)} variant="contained" sx={{ mt: 1 }}>
+                Fechar
+              </Button>
+            </Box>
+          )}
         </Box>
 
         <Box
@@ -128,11 +210,7 @@ const Dashboard = () => {
             subtitle="Novos usuários"
             progress="0.30"
             increase="+5%"
-            icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            icon={<PersonAddIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />}
           />
         </Box>
 
@@ -148,11 +226,7 @@ const Dashboard = () => {
             subtitle="Discussões no fórum"
             progress="0.18"
             increase="+18%"
-            icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            icon={<PersonAddIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />}
           />
         </Box>
 
@@ -194,7 +268,6 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        {/* ROW 3 */}
         <Box
           gridColumn="span 4"
           gridRow="span 2"
@@ -209,7 +282,6 @@ const Dashboard = () => {
           </Box>
           <Divider sx={{ my: 2 }} />
 
-          {/* Exibição dos Módulos no estilo desejado */}
           {modulos.map((modulo) => (
             <Box key={modulo.id} mb={2} p={2} sx={{ border: '1px solid #ddd', borderRadius: '8px' }}>
               <Box display="flex" justifyContent="space-between" alignItems="center">
