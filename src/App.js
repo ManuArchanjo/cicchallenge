@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Topbar from "./scenes/fixo/Topbar";
-import Sidebar from "./scenes/fixo/Sidebar";
-import Dashboard from "./scenes/dashboard";
+import Topbar from "./pages/fixo/Topbar";
+import Sidebar from "./pages/fixo/Sidebar";
+import Dashboard from "./pages/dashboard";
+import Painel from "./pages/painel";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 
@@ -20,6 +21,7 @@ function App() {
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/painel" element={<Painel />} />
 
             </Routes>
           </main>
