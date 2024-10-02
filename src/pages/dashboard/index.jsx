@@ -171,7 +171,6 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        {/* Últimos tópicos do fórum e chat */}
         <Box gridColumn="span 4" gridRow="span 2" backgroundColor={colors.primary[400]} overflow="auto">
 
           {mockForumTopics.map((topic) => (

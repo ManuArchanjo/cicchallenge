@@ -4,6 +4,7 @@ import Topbar from "./pages/fixo/Topbar";
 import Sidebar from "./pages/fixo/Sidebar";
 import Dashboard from "./pages/dashboard";
 import Painel from "./pages/painel";
+import Trilhas from "./pages/trilhas";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 
@@ -22,6 +23,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/painel" element={<Painel />} />
+              <Route path="/trilhas" element={<Trilhas />} />
+              
 
             </Routes>
           </main>
