@@ -95,8 +95,15 @@ const Sidebar = () => {
               sx={{ m: "15px 0 5px 20px" }}
             >
             </Typography>
-            <Item
+            {/* <Item
               title="Perfil"
+              to="/painel"
+              icon={<PeopleOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            /> */}
+            <Item
+              title="Painel de gestão"
               to="/painel"
               icon={<PeopleOutlinedIcon />}
               selected={selected}

@@ -8,18 +8,17 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import { useLocation } from "react-router-dom";  // Importando o hook useLocation
+import { useLocation } from "react-router-dom";
 
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
   
-  const location = useLocation();  // Obtendo a rota atual
+  const location = useLocation();
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
-      {/* Mantendo o espaço do campo de busca, mas escondendo o conteúdo se não estiver na rota "/" */}
       <Box
         display="flex"
         backgroundColor={colors.primary[400]}

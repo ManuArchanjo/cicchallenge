@@ -7,6 +7,7 @@ import Painel from "./pages/painel";
 import Trilhas from "./pages/trilhas";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
+import VideoExample from "../src/components/VideoDetail";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -24,8 +25,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/painel" element={<Painel />} />
               <Route path="/trilhas" element={<Trilhas />} />
-              
-
+              <Route path="/video" element={<VideoExample />} /> {/* Corrigido */}
             </Routes>
           </main>
         </div>

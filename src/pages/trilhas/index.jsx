@@ -13,28 +13,73 @@ import {
   Select,
   MenuItem,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
-import StarIcon from '@mui/icons-material/Star';
 
 const Trilhas = () => {
   const trilhasEmAndamento = [
     {
-      title: 'Academia SophiDoor - Do básico ao avançado',
+      title: 'Introdução ao PERDCOMP - Como Iniciar',
       progress: 7,
     },
     {
-      title: 'Produtos SophiaTech',
+      title: 'Erros Comuns no Preenchimento',
       progress: 66,
     },
     {
-      title: 'Aprenda com quem faz acontecer',
+      title: 'Dicas Avançadas para Maximizar o Uso',
       progress: 43,
     },
   ];
 
   return (
     <Box p={5}>
-      <Box display="flex"  mb={4}>
+      <Box
+        sx={{
+          height: '300px',
+          color: '#fff',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          borderRadius: '8px',
+          mb: 4,
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <CardMedia
+          component="img"
+          height="300"
+          width="100%"
+          image="https://i0.wp.com/asisprojetos.com.br/wp-content/uploads/2024/05/ICMS-Descomplicado-BLOG.jpeg?w=1600&ssl=1"
+          alt="Imagem ICMS Descomplicado"
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: '10px',
+            left: '20px',
+            zIndex: 1,
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            padding: '10px',
+            borderRadius: '8px',
+          }}
+        >
+          <Typography variant="h6">TRILHA</Typography>
+          <Typography variant="h4" fontWeight="bold">
+            PERDCOMP - Do básico ao avançado
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{ backgroundColor: '#4a90e2', color: '#fff', mt: 2 }}
+          >
+            Continuar
+          </Button>
+        </Box>
+      </Box>
+
+      <Box display="flex" justifyContent="space-between" mb={4}>
         <Select
           defaultValue=""
           displayEmpty
@@ -61,7 +106,6 @@ const Trilhas = () => {
         />
       </Box>
 
-      {/* Trilhas em andamento */}
       <Box mb={4}>
         <Typography variant="h6" fontWeight="bold" mb={2}>
           Em andamento
@@ -69,44 +113,45 @@ const Trilhas = () => {
         <Grid container spacing={3}>
           {trilhasEmAndamento.map((trilha, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card sx={{ borderRadius: '8px' }}>
-                {/* Iframe do vídeo do YouTube */}
-                <CardMedia
-                  component="iframe"
-                  height="315"
-                  src="https://www.youtube.com/embed/g4vzqOHQFFI?si=G5vuXF_SrCnmiJDq"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-                <CardContent>
-                  <Typography variant="h6">{trilha.title}</Typography>
-                  <Box sx={{ mt: 2 }}>
-                    <Typography variant="body2" color="textSecondary">
-                      Progresso: {trilha.progress}%
-                    </Typography>
-                    <Box
-                      sx={{
-                        backgroundColor: '#f0f0f0',
-                        borderRadius: '4px',
-                        height: '8px',
-                        mt: 1,
-                        position: 'relative',
-                        overflow: 'hidden',
-                      }}
-                    >
+              <Link to="/video" style={{ textDecoration: 'none' }}>
+                <Card sx={{ borderRadius: '8px' }}>
+                  <CardMedia
+                    component="iframe"
+                    height="315"
+                    src="https://www.youtube.com/embed/g4vzqOHQFFI?si=G5vuXF_SrCnmiJDq"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                  <CardContent>
+                    <Typography variant="h6">{trilha.title}</Typography>
+                    <Box sx={{ mt: 2 }}>
+                      <Typography variant="body2" color="textSecondary">
+                        Progresso: {trilha.progress}%
+                      </Typography>
                       <Box
                         sx={{
-                          backgroundColor: '#4a90e2',
-                          height: '100%',
-                          width: `${trilha.progress}%`,
+                          backgroundColor: '#f0f0f0',
+                          borderRadius: '4px',
+                          height: '8px',
+                          mt: 1,
+                          position: 'relative',
+                          overflow: 'hidden',
                         }}
-                      />
+                      >
+                        <Box
+                          sx={{
+                            backgroundColor: '#4a90e2',
+                            height: '100%',
+                            width: `${trilha.progress}%`,
+                          }}
+                        />
+                      </Box>
                     </Box>
-                  </Box>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             </Grid>
           ))}
         </Grid>
