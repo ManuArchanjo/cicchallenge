@@ -17,6 +17,16 @@ const VideoExample = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
+
+  const [showFullText, setShowFullText] = useState(false); 
+  
+  const handleToggleText = () => {
+    setShowFullText(!showFullText);
+  };
+  const loremText = 
+  "Passo 1: Acessar o Sistema do PERDCOMP\n\n" +
+  "Entre no sistema oficial da Receita Federal através do portal e-CAC, utilizando seu certificado digital ou código de acesso. Após o login, navegue até a seção 'PerdComp Web' e selecione a opção 'Analisar Pedido'.\n\n" 
+  
   const handleAddComment = () => {
     if (newComment.trim()) {
       setComments([...comments, { name: 'Você', text: newComment }]);
@@ -43,12 +53,6 @@ const VideoExample = () => {
       duration: '60s',
       points: 20,
     },
-    {
-      title: 'Avaliação do curso - Questionário',
-      progress: 0,
-      duration: '15min',
-      points: 30,
-    },
   ];
 
   const totalPoints = modules.reduce((total, module) => total + module.points, 0);
@@ -70,7 +74,7 @@ const VideoExample = () => {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/qBkveO-P68g"
+            src="https://www.youtube.com/embed/PYBYVYINfVk?si=-3iQWQcZeNCAdpPY"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -78,39 +82,13 @@ const VideoExample = () => {
           ></iframe>
         </Box>
 
-        <Box mt={4}>
-          <Typography variant="h6" mb={2} color="#0D47A1">Comentários</Typography>
-          <TextField
-            label="Escreva um comentário"
-            variant="outlined"
-            fullWidth
-            multiline
-            rows={3}
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
-            sx={{ mb: 2, backgroundColor: '#FFFFFF', borderRadius: '4px' }}
-          />
-          <Button variant="contained" onClick={handleAddComment} sx={{ backgroundColor: '#0288D1', color: '#fff' }}>
-            Postar
-          </Button>
+        <Typography variant="body1">
+          {showFullText ? loremText : `${loremText.substring(0, 200)}...`}
+        </Typography>
 
-          <Box mt={4}>
-            <Typography variant="h6" color="#0D47A1">Comentários Recentes</Typography>
-            <List>
-              {comments.map((comment, index) => (
-                <React.Fragment key={index}>
-                  <ListItem>
-                    <ListItemText
-                      primary={comment.name}
-                      secondary={comment.text}
-                    />
-                  </ListItem>
-                  <Divider />
-                </React.Fragment>
-              ))}
-            </List>
-          </Box>
-        </Box>
+        <Button onClick={handleToggleText} sx={{ mt: 1 }} variant="text">
+          {showFullText ? 'Ver menos' : 'Ver mais'}
+        </Button>
       </Box>
 
       <Box flex={1} sx={{ padding: '20px', backgroundColor: '#F0F4F7', borderRadius: '8px' }}>

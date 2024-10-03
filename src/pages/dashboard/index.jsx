@@ -54,22 +54,6 @@ const Dashboard = () => {
       progress: "0%",
       items: [],
     },
-    {
-      id: 3,
-      title: "Conteúdo 3 - Vídeo (60s)",
-      type: "Vídeo",
-      duration: "60s",
-      progress: "0%",
-      items: [],
-    },
-    {
-      id: 4,
-      title: "Avaliação do curso",
-      type: "Questionário",
-      duration: "15min",
-      progress: "0%",
-      items: [],
-    },
   ];
 
   return (
@@ -230,7 +214,6 @@ const Dashboard = () => {
           />
         </Box>
 
-        {/* ROW 2 */}
         <Box
           gridColumn="span 8"
           gridRow="span 2"
@@ -286,7 +269,7 @@ const Dashboard = () => {
             <Box key={modulo.id} mb={2} p={2} sx={{ border: '1px solid #ddd', borderRadius: '8px' }}>
               <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Box display="flex" alignItems="center">
-                  <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#5F4BB6' }}>
+                  <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#195db8' }}>
                     {modulo.title}
                   </Typography>
                   <Typography variant="body2" sx={{ ml: 2 }}>
@@ -294,7 +277,7 @@ const Dashboard = () => {
                   </Typography>
                 </Box>
                 <Box display="flex" alignItems="center">
-                  <Typography variant="body2" sx={{ fontWeight: 'bold', color: '#5F4BB6' }}>
+                  <Typography variant="body2" sx={{ fontWeight: 'bold', color: '#195db8' }}>
                     {modulo.progress}
                   </Typography>
                   <IconButton onClick={() => toggleModule(modulo.id)}>

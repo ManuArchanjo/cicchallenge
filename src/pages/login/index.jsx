@@ -1,85 +1,134 @@
 import React, { useState } from "react";
-import { Box, TextField, Button, MenuItem, Select, InputLabel, FormControl, Typography } from "@mui/material";
+import { Box, TextField, Button, Typography, Grid, Paper } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const LoginPage = () => {
-  // Dados fixos pré-definidos
-  const [userType, setUserType] = useState("admin"); // Tipo de usuário fixo como 'Admin'
-  const [name, setName] = useState("João Silva"); // Nome fixo 'João Silva'
-  const [role, setRole] = useState("developer"); // Cargo fixo 'Desenvolvedor'
-
-  const handleUserTypeChange = (event) => {
-    setUserType(event.target.value);
-  };
-
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleRoleChange = (event) => {
-    setRole(event.target.value);
-  };
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Tipo de Usuário: ${userType}, Nome: ${name}, Cargo: ${role}`);
-    // Aqui vai a lógica para redirecionar ou autenticar o usuário
+    navigate("/");
   };
 
   return (
-    <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
-      <Box
-        component="form"
-        onSubmit={handleSubmit}
-        sx={{ display: "flex", flexDirection: "column", width: "300px", gap: "20px", padding: "20px", border: "1px solid #ddd", borderRadius: "8px" }}
+    <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid item xs={12} md={6} component={Paper} elevation={6} square>
+        <Box
+          sx={{
+            my: 8,
+            mx: 4,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Typography component="h1" variant="h5" sx={{ color: "#009688" }}>
+            Sign In To Developer
+          </Typography>
+
+          <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+            <Button
+              variant="outlined"
+              sx={{ borderColor: "#ccc", color: "#ccc" }}
+            >
+              F
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{ borderColor: "#ccc", color: "#ccc" }}
+            >
+              G
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{ borderColor: "#ccc", color: "#ccc" }}
+            >
+              In
+            </Button>
+          </Box>
+
+          <Typography component="p" variant="body2" sx={{ mt: 2 }}>
+            or use your email account
+          </Typography>
+
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{ mt: 1, width: "100%" }}
+          >
+            <TextField
+              margin="normal"
+              fullWidth
+              label="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              fullWidth
+              label="Password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <Typography variant="body2" sx={{ mt: 1, color: "#009688" }}>
+              Forgot your password?
+            </Typography>
+
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{
+                mt: 3,
+                mb: 2,
+                backgroundColor: "#009688",
+                color: "#fff",
+              }}
+            >
+              Sign In
+            </Button>
+          </Box>
+        </Box>
+      </Grid>
+      <Grid
+        item
+        xs={false}
+        md={6}
+        sx={{
+          backgroundColor: "#009688",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <Typography variant="h4" textAlign="center">Login</Typography>
-
-        <FormControl fullWidth>
-          <InputLabel id="user-type-label">Tipo de Usuário</InputLabel>
-          <Select
-            labelId="user-type-label"
-            value={userType}
-            label="Tipo de Usuário"
-            onChange={handleUserTypeChange}
-            required
+        <Box sx={{ color: "#fff", textAlign: "center" }}>
+          <Typography component="h1" variant="h4">
+            Hello, Friend!
+          </Typography>
+          <Typography component="p" variant="body2" sx={{ mt: 2 }}>
+            Enter your personal details and start your journey with us
+          </Typography>
+          <Button
+            variant="outlined"
+            sx={{
+              mt: 4,
+              borderColor: "#fff",
+              color: "#fff",
+              borderRadius: "20px",
+              padding: "10px 30px",
+            }}
           >
-            <MenuItem value="admin">Admin</MenuItem>
-            <MenuItem value="colaborador">Colaborador</MenuItem>
-          </Select>
-        </FormControl>
-
-        <TextField
-          label="Nome"
-          variant="outlined"
-          fullWidth
-          value={name}
-          onChange={handleNameChange}
-          required
-        />
-
-        <FormControl fullWidth>
-          <InputLabel id="role-label">Cargo</InputLabel>
-          <Select
-            labelId="role-label"
-            value={role}
-            label="Cargo"
-            onChange={handleRoleChange}
-            required
-          >
-            <MenuItem value="developer">Desenvolvedor</MenuItem>
-            <MenuItem value="designer">Designer</MenuItem>
-            <MenuItem value="manager">Gerente</MenuItem>
-            <MenuItem value="qa">QA</MenuItem>
-            <MenuItem value="other">Outro</MenuItem>
-          </Select>
-        </FormControl>
-
-        <Button type="submit" variant="contained" color="primary" fullWidth>
-          Entrar
-        </Button>
-      </Box>
-    </Box>
+            SIGN UP
+          </Button>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 
-export default LoginPage;
+export default Login;
