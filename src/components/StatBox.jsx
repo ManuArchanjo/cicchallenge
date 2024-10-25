@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import ProgressCircle from "./ProgressCircle";
-import COpo from "../imagens/copo.png";
+import COpo from "../Imagens/copo.png";
 
 const StatBox = ({  progress, increase }) => {
   const theme = useTheme();
