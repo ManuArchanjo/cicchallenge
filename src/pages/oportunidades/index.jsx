@@ -1,107 +1,175 @@
 import React from 'react';
 import {
-  Box, Card, CardContent, Typography, Grid, Select, MenuItem, LinearProgress, List, ListItem, ListItemIcon, ListItemText,
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Button,
+  Chip,
+  IconButton,
+  Pagination,
+  List,
+  ListItem,
+  ListItemText,
 } from '@mui/material';
-import { WorkOutline, LocationOn, SchoolOutlined, CheckCircleOutline, ErrorOutline } from '@mui/icons-material';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+
+const oportunidades = [
+  {
+    cargo: 'Analista de Monitoramento Tributário',
+    local: 'Remota',
+    tipo: 'Plataforma',
+    data: '1 semana atrás',
+    descricao: 'Monitora eventos de divergência e alerta para ações corretivas.',
+    requisitos: ['Experiência em análise de dados fiscais', 'Conhecimento no sistema PERDCOMP'],
+  },
+  {
+    cargo: 'Especialista em Controles Automatizados',
+    local: 'Híbrida - São Paulo/SP',
+    tipo: 'Plataforma',
+    data: '2 semanas atrás',
+    descricao: 'Desenvolve controles para automatização tributária.',
+    requisitos: ['Experiência em automação de processos fiscais', 'Conhecimento em integrações de sistemas'],
+  },
+  {
+    cargo: 'Engenheiro de Dados Tributários',
+    local: 'Remota',
+    tipo: 'Plataforma',
+    data: '1 mês atrás',
+    descricao: 'Consolida dados para insights financeiros.',
+    requisitos: ['Experiência em engenharia de dados', 'Conhecimento em tributação federal'],
+  },
+  {
+    cargo: 'Gerente de Conformidade Fiscal',
+    local: 'Presencial - Brasília/DF',
+    tipo: 'Plataforma',
+    data: '3 dias atrás',
+    descricao: 'Lidera políticas de conformidade tributária.',
+    requisitos: ['Experiência em gestão de conformidade', 'Conhecimento de legislação tributária'],
+  },
+  {
+    cargo: 'Gerente de Conformidade Fiscal',
+    local: 'Presencial - Brasília/DF',
+    tipo: 'Plataforma',
+    data: '3 dias atrás',
+    descricao: 'Lidera políticas de conformidade tributária.',
+    requisitos: ['Experiência em gestão de conformidade', 'Conhecimento de legislação tributária'],
+  },
+  {
+    cargo: 'Especialista em Controles Automatizados',
+    local: 'Híbrida - São Paulo/SP',
+    tipo: 'Plataforma',
+    data: '2 semanas atrás',
+    descricao: 'Desenvolve controles para automatização tributária.',
+    requisitos: ['Experiência em automação de processos fiscais', 'Conhecimento em integrações de sistemas'],
+  },
+  {
+    cargo: 'Engenheiro de Dados Tributários',
+    local: 'Remota',
+    tipo: 'Plataforma',
+    data: '1 mês atrás',
+    descricao: 'Consolida dados para insights financeiros.',
+    requisitos: ['Experiência em engenharia de dados', 'Conhecimento em tributação federal'],
+  },
+  {
+    cargo: 'Analista de Monitoramento Tributário',
+    local: 'Remota',
+    tipo: 'Plataforma',
+    data: '1 semana atrás',
+    descricao: 'Monitora eventos de divergência e alerta para ações corretivas.',
+    requisitos: ['Experiência em análise de dados fiscais', 'Conhecimento no sistema PERDCOMP'],
+  },
+];
 
 const OportunidadesInternas = () => {
-  const oportunidades = [
-    {
-      cargo: 'Gerente de Projetos',
-      setor: 'Gestão de Projetos',
-      local: 'Presencial - São Paulo',
-      progresso: 4,
-      totalEtapas: 7,
-      modulosNecessarios: ['Introdução à Gestão de Projetos', 'Metodologias Ágeis', 'Gestão de Riscos'],
-      status: 'Em andamento',
-    },
-  ];
-
   return (
-    <Box p={5}>
-      <Typography variant="h4" mb={8} fontWeight="bold" color="#003366">
-        Oportunidades Internas - Gestão
+    <Box p={3}>
+      <Typography variant="h5" fontWeight="bold" color="#3a3a3a" mb={1}>
+        Recomendações para você
       </Typography>
-      <Grid container spacing={4}>
-        <Grid item xs={12} md={3}>
-          <Box p={3} sx={{ backgroundColor: '#f8f9fa', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
-            <Typography variant="h6" fontWeight="bold" color="#003366" mb={2}>Filtrar oportunidades</Typography>
+      <Typography variant="body2" color="gray" mb={2}>
+        Baseado no seu perfil e histórico de pesquisas
+      </Typography>
 
-            <Typography variant="subtitle2" color="gray" mb={1}>Cargo</Typography>
-            <Select defaultValue="" displayEmpty fullWidth sx={{ mb: 3, backgroundColor: '#fff', borderRadius: '4px' }}>
-              <MenuItem value="">
-                <em>Todos os cargos</em>
-              </MenuItem>
-              <MenuItem value={1}>Gerente de Projetos</MenuItem>
-              <MenuItem value={2}>Coordenador de Operações</MenuItem>
-              <MenuItem value={3}>Analista de Processos</MenuItem>
-            </Select>
+      <Box display="flex" gap={1} mb={3}>
+        <Button variant="contained" sx={{ backgroundColor: '#2763f7', color: '#fff', borderRadius: '20px' }}>
+          Todos
+        </Button>
+        <Button variant="outlined" sx={{ borderColor: '#2763f7', color: '#2763f7', borderRadius: '20px' }}>
+          Plataforma
+        </Button>
+        <Button variant="outlined" sx={{ borderColor: '#2763f7', color: '#2763f7', borderRadius: '20px' }}>
+          Gestão
+        </Button>
+      </Box>
 
-            <Typography variant="subtitle2" color="gray" mb={1}>Local</Typography>
-            <Select defaultValue="" displayEmpty fullWidth sx={{ mb: 3, backgroundColor: '#fff', borderRadius: '4px' }}>
-              <MenuItem value="">
-                <em>Todos os locais</em>
-              </MenuItem>
-              <MenuItem value={1}>Presencial - São Paulo</MenuItem>
-              <MenuItem value={2}>Híbrido - São Paulo</MenuItem>
-              <MenuItem value={3}>Remoto</MenuItem>
-            </Select>
+      <Grid container spacing={2}>
+        {oportunidades.map((vaga, index) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+            <Card
+              variant="outlined"
+              sx={{
+                borderRadius: '8px',
+                boxShadow: 'none',
+                width: '100%',
+                height: '220px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+                <Box>
+                  <Box display="flex" alignItems="center" justifyContent="space-between" mb={1}>
+                    <Chip
+                      label={vaga.tipo}
+                      color="secondary"
+                      size="small"
+                      sx={{ backgroundColor: '#2763f7', color: '#fff', fontSize: '0.8rem' }}
+                      icon={<InfoOutlinedIcon fontSize="small" />}
+                    />
+                    <IconButton size="small">
+                      <BookmarkBorderIcon />
+                    </IconButton>
+                  </Box>
+                  <Typography variant="h6" fontWeight="bold" fontSize="0.9rem" mb={0.5}>
+                    {vaga.cargo}
+                  </Typography>
+                  <Typography variant="body2" color="gray" fontSize="0.8rem" mb={0.5}>
+                    {vaga.local}
+                  </Typography>
+                  <Typography variant="body2" color="gray" fontSize="0.8rem" mb={1}>
+                    {vaga.descricao}
+                  </Typography>
+                </Box>
 
-            <Typography variant="subtitle2" color="gray" mb={1}>Status</Typography>
-            <Select defaultValue="" displayEmpty fullWidth sx={{ mb: 3, backgroundColor: '#fff', borderRadius: '4px' }}>
-              <MenuItem value="">
-                <em>Todos os status</em>
-              </MenuItem>
-              <MenuItem value={1}>Em andamento</MenuItem>
-              <MenuItem value={2}>Inscrição Pendente</MenuItem>
-              <MenuItem value={3}>Concluído</MenuItem>
-            </Select>
-          </Box>
-        </Grid>
-
-        <Grid item xs={12} md={9}>
-          <Grid container spacing={3}>
-            {oportunidades.map((op, index) => (
-              <Grid item xs={12} key={index}>
-                <Card sx={{ boxShadow: '0 2px 12px rgba(0,0,0,0.1)' }}>
-                  <CardContent>
-                    <Box display="flex" justifyContent="space-between" alignItems="center">
-                      <Box>
-                        <Typography variant="h6" fontWeight="bold" color="#003366">{op.cargo}</Typography>
-                        <Typography><WorkOutline sx={{ color: '#0066cc', mr: 1 }} />{op.setor}</Typography>
-                        <Typography><LocationOn sx={{ color: '#0066cc', mr: 1 }} />{op.local}</Typography>
-                        <Typography variant="body2" color="gray" mt={1}>
-                          Progresso: {op.progresso}/{op.totalEtapas} etapas concluídas
-                        </Typography>
-                        <LinearProgress variant="determinate" value={(op.progresso / op.totalEtapas) * 100} sx={{ mt: 1, height: '8px', borderRadius: '4px' }} />
-                      </Box>
-                      <Box>
-                        {op.status === 'Concluído' && <CheckCircleOutline sx={{ color: 'green', fontSize: 30 }} />}
-                        {op.status === 'Inscrição Pendente' && <ErrorOutline sx={{ color: 'orange', fontSize: 30 }} />}
-                        {op.status === 'Em andamento' && <ErrorOutline sx={{ color: 'blue', fontSize: 30 }} />}
-                      </Box>
-                    </Box>
-
-                    <Typography variant="subtitle1" mt={2} mb={1} color="#003366">
-                      Cursos Necessários:
-                    </Typography>
-                    <List>
-                      {op.modulosNecessarios.map((modulo, idx) => (
-                        <ListItem key={idx} disableGutters>
-                          <ListItemIcon>
-                            <SchoolOutlined sx={{ color: '#0066cc' }} />
-                          </ListItemIcon>
-                          <ListItemText primary={modulo} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
+                <Box mt="auto">
+                  <Typography variant="subtitle2" color="#2762f7af" fontWeight="bold">
+                    Requisitos:
+                  </Typography>
+                  <List dense>
+                    {vaga.requisitos.map((req, idx) => (
+                      <ListItem key={idx} sx={{ p: 0 }}>
+                        <ListItemText primary={req} primaryTypographyProps={{ variant: 'body2', fontSize: '0.8rem' }} />
+                      </ListItem>
+                    ))}
+                  </List>
+                  <Typography variant="caption" color="gray" mt={1} display="block">
+                    {vaga.data}
+                  </Typography>
+                </Box>
+              </CardContent>
+            </Card>
           </Grid>
-        </Grid>
+        ))}
       </Grid>
+
+      {/* Paginação */}
+      <Box display="flex" justifyContent="center" mt={3}>
+        <Pagination count={3} shape="rounded" />
+      </Box>
     </Box>
   );
 };
