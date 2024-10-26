@@ -8,7 +8,7 @@ import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import Logo from "../../imagens/Logo.png"; 
+import Logo from "../../Imagens/Logo.png"; 
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   return (

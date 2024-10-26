@@ -227,13 +227,13 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Box>
-              <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
+              <Typography variant="h5" fontWeight="600" color="##1e88e5f2">
                 Progresso nas Trilhas CIC e PERDCOMP
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
-                color={colors.greenAccent[500]}
+                color="#1e88e5f2"
               >
                 80% Concluído
               </Typography>
@@ -241,7 +241,7 @@ const Dashboard = () => {
             <Box>
               <IconButton>
                 <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
+                  sx={{ fontSize: "26px", color: "#338ee5"}}
                 />
               </IconButton>
             </Box>
